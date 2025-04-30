@@ -247,6 +247,22 @@ const LogsTable = () => {
             }
         },
         {
+            title: '余额',
+            dataIndex: 'userQuota',
+            render: (text, record, index) => {
+                return (
+                    record.type === 0 || record.type === 2 ?
+                        <div>
+                            {
+                                renderQuota(text, 6)
+                            }
+                        </div>
+                        :
+                        <></>
+                );
+            }
+        },
+        {
             title: '倍率',
             dataIndex: 'multiplier',
             render: (text, record, index) => {
